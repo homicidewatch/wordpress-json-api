@@ -25,7 +25,7 @@ class JSON_API_Query {
     $wp_query_var = $this->wp_query_var($key);
     if ($wp_query_var) {
       return $wp_query_var;
-    } else if ($query_var) {
+    } else if (isset($query_var)) {
       return $this->strip_magic_quotes($query_var);
     } else if (isset($this->defaults[$key])) {
       return $this->defaults[$key];
